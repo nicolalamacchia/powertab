@@ -724,7 +724,7 @@ import '@fortawesome/fontawesome-free/css/solid.css'
     // Help
     help: args => {
       newTab = true
-      redirect('https://github.com/koryschneider/tab#readme')
+      redirect('https://github.com/nicolalamacchia/powertab#readme')
     },
 
     // Google
