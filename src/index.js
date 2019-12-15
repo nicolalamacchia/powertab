@@ -30,6 +30,7 @@ import './style.css'
     loadConfig()
     applyConfig()
     saveConfig()
+    addQuickButtons()
 
     document.querySelector('#input').focus()
 
@@ -40,6 +41,127 @@ import './style.css'
     document.onkeydown = handleKeyDown
 
     updateClock()
+  }
+
+  function addQuickButtons() {
+    const QUICK_BUTTONS = [
+      {
+        section: 'Shopping',
+        buttons: [
+          {
+            class: 'fab fa-ebay',
+            link: 'https://ebay.it',
+            title: 'eBay',
+          },
+          {
+            class: 'fab fa-amazon',
+            link: 'https://amazon.it',
+            title: 'Amazon',
+          },
+          {
+            class: 'fas fa-hamburger',
+            link: 'https://deliveroo.it',
+            title: 'Deliveroo',
+          },
+        ],
+      },
+      {
+        section: 'Social',
+        buttons: [
+          {
+            class: 'fab fa-reddit',
+            link: 'https://reddit.com',
+            title: 'Reddit',
+          },
+          {
+            class: 'fab fa-linkedin',
+            link: 'https://linkedin.it',
+            title: 'LinkedIn',
+          },
+          {
+            class: 'fab fa-whatsapp',
+            link: 'https://web.whatsapp.com',
+            title: 'WhatsApp',
+          },
+          {
+            class: 'fab fa-telegram',
+            link: 'https://web.telegram.org',
+            title: 'Telegram',
+          },
+          {
+            class: 'fab fa-discord',
+            link: 'https://discordapp.com',
+            title: 'Discord',
+          },
+          {
+            class: 'fab fa-twitter',
+            link: 'https://twitter.com',
+            title: 'Twitter',
+          },
+        ],
+      },
+      {
+        section: 'Streaming',
+        buttons: [
+          {
+            class: 'fas fa-film',
+            link: 'https://netflix.com',
+            title: 'Netflix',
+          },
+          {
+            class: 'fas fa-play-circle',
+            link: 'https://primevideo.com',
+            title: 'Prime Video',
+          },
+          {
+            class: 'fab fa-youtube',
+            link: 'https://youtube.com',
+            title: 'YouTube',
+          },
+          {
+            class: 'fab fa-twitch',
+            link: 'https://twitch.tv',
+            title: 'Twitch',
+          },
+        ],
+      },
+      {
+        section: 'Code',
+        buttons: [
+          {
+            class: 'fab fa-github',
+            link: 'https://github.com',
+            title: 'GitHub',
+          },
+          {
+            class: 'fab fa-gitlab',
+            link: 'https://gitlab.com',
+            title: 'GitLab',
+          },
+          {
+            class: 'fas fa-laptop-code',
+            link: 'https://codesandbox.io',
+            title: 'CodeSandbox',
+          },
+          {
+            class: 'fab fa-codepen',
+            link: 'https://codepen.io',
+            title: 'CodePen',
+          },
+        ],
+      },
+    ]
+    const qbEl = document.querySelector('#quick-buttons')
+    QUICK_BUTTONS.forEach(section => {
+      const sectionEl = document.createElement('section')
+      // sectionEl.innerHTML = `<header>${section.section}</header>`
+      const buttonsHtml = section.buttons.map(
+        button =>
+          `<li><a title="${button.title}" href=${button.link}><i class="${button.class}"></i></a></li>`
+      ).join('')
+      sectionEl.innerHTML += buttonsHtml
+      qbEl.appendChild(sectionEl)
+    })
   }
 
   function evaluateInput() {
