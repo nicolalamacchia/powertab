@@ -104,6 +104,16 @@ import '@fortawesome/fontawesome-free/css/solid.css'
         ],
       },
       {
+        section: 'Email',
+        buttons: [
+          {
+            class: 'fas fa-envelope',
+            link: 'https://gmail.com',
+            title: 'Gmail',
+          },
+        ],
+      },
+      {
         section: 'Streaming',
         buttons: [
           {
@@ -150,6 +160,21 @@ import '@fortawesome/fontawesome-free/css/solid.css'
             class: 'fab fa-codepen',
             link: 'https://codepen.io',
             title: 'CodePen',
+          },
+        ],
+      },
+      {
+        section: 'Games',
+        buttons: [
+          {
+            class: 'fab fa-steam',
+            link: 'https://steampowered.com',
+            title: 'Steam',
+          },
+          {
+            class: 'fas fa-gamepad',
+            link: 'https://gog.com',
+            title: 'GOG',
           },
         ],
       },
