@@ -1,11 +1,13 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
   font-size: 1.75em;
 }
-body, #app {
+body,
+#app {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,12 +38,12 @@ body, #app {
 #clock,
 #input,
 #message {
-  font-family: "Helvetica Neue", Roboto, sans-serif;
+  font-family: 'Helvetica Neue', Roboto, sans-serif;
 }
 #quick-buttons {
   display: flex;
-  font-family: "Helvetica Neue", Roboto, sans-serif;
-  font-size: 0.4em;
+  font-family: 'Helvetica Neue', Roboto, sans-serif;
+  font-size: 0.45em;
 }
 section {
   text-align: center;
@@ -68,9 +70,12 @@ li:not(:last-child) {
 li > a > i {
   font-size: 1.5em;
 }
-li > a:link, li > a:visited {
+li > a:link,
+li > a:visited {
   color: #ebdbb2;
 }
-li > a:hover, li > a:active, li > a:focus {
+li > a:hover,
+li > a:active,
+li > a:focus {
   color: #bdae93;
 }
