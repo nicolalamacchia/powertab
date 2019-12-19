@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "webpack-dev-server --mode development --hot",
+    "start": "webpack-dev-server --mode development --hot",
     "build": "webpack -p --progress && rm dist/main.js"
   },
   "devDependencies": {
