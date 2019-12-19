@@ -2,7 +2,6 @@ import './style.css'
 import '@fortawesome/fontawesome-free/css/fontawesome.css'
 import '@fortawesome/fontawesome-free/css/brands.css'
 import '@fortawesome/fontawesome-free/css/solid.css'
-
 ;(function() {
   // Default config
   let CONFIG = {
@@ -82,6 +81,16 @@ import '@fortawesome/fontawesome-free/css/solid.css'
             title: 'LinkedIn',
           },
           {
+            class: 'fab fa-twitter',
+            link: 'https://twitter.com',
+            title: 'Twitter',
+          },
+        ],
+      },
+      {
+        section: 'Email',
+        buttons: [
+          {
             class: 'fab fa-whatsapp',
             link: 'https://web.whatsapp.com',
             title: 'WhatsApp',
@@ -96,20 +105,20 @@ import '@fortawesome/fontawesome-free/css/solid.css'
             link: 'https://discordapp.com',
             title: 'Discord',
           },
-          {
-            class: 'fab fa-twitter',
-            link: 'https://twitter.com',
-            title: 'Twitter',
-          },
         ],
       },
       {
-        section: 'Email',
+        section: 'Google',
         buttons: [
           {
             class: 'fas fa-envelope',
             link: 'https://gmail.com',
             title: 'Gmail',
+          },
+          {
+            class: 'fab fa-google-drive',
+            link: 'https://drive.google.com',
+            title: 'Google Drive',
           },
         ],
       },
@@ -183,10 +192,12 @@ import '@fortawesome/fontawesome-free/css/solid.css'
     QUICK_BUTTONS.forEach(section => {
       const sectionEl = document.createElement('section')
       // sectionEl.innerHTML = `<header>${section.section}</header>`
-      const buttonsHtml = section.buttons.map(
-        button =>
-          `<li><a title="${button.title}" href=${button.link}><i class="${button.class}"></i></a></li>`
-      ).join('')
+      const buttonsHtml = section.buttons
+        .map(
+          button =>
+            `<li><a title="${button.title}" href=${button.link}><i class="${button.class}"></i></a></li>`
+        )
+        .join('')
       sectionEl.innerHTML += buttonsHtml
       qbEl.appendChild(sectionEl)
     })
@@ -473,7 +484,9 @@ import '@fortawesome/fontawesome-free/css/solid.css'
             displayMessage(`Set default command to ${args[1]}`, 3000)
           } else {
             displayMessage(
-              `Error: command ${args[1]} not found; default command not changed`,
+              `Error: command ${
+                args[1]
+              } not found; default command not changed`,
               10000
             )
           }
