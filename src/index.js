@@ -484,9 +484,7 @@ import '@fortawesome/fontawesome-free/css/solid.css'
             displayMessage(`Set default command to ${args[1]}`, 3000)
           } else {
             displayMessage(
-              `Error: command ${
-                args[1]
-              } not found; default command not changed`,
+              `Error: command ${args[1]} not found; default command not changed`,
               10000
             )
           }
