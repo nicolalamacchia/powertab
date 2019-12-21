@@ -60,8 +60,8 @@ jobs:
           prerelease: false
       - name: Send Release Event
         run: |
-          curl --head https://nicola.link/ci-update/powertab/${{ steps.get_timestamp.outputs.ts }}
-          # curl -X POST -d "token=${{ secrets.RELEASE_TOKEN }}&app=powertab&ts=${{ steps.get_timestamp.outputs.ts }}" -H "Content-Type: application/x-www-form-urlencoded" https://nicola.link/ci-update
+          # curl --head https://nicola.link/ci-update/powertab/${{ steps.get_timestamp.outputs.ts }}
+          curl -X POST -d "token=${{ secrets.RELEASE_TOKEN }}&app=powertab&ts=${{ steps.get_timestamp.outputs.ts }}" -H "Content-Type: application/x-www-form-urlencoded" https://nicola.link/ci-update
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.1
