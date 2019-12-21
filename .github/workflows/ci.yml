@@ -54,7 +54,12 @@ jobs:
       - name: Send Release Event
         run: |
           # curl --head https://nicola.link/ci-update/powertab/${{ steps.get_timestamp.outputs.ts }}
-          curl --fail -X POST -d "token=${{ secrets.RELEASE_TOKEN }}&app=powertab&ts=${{ steps.get_timestamp.outputs.ts }}" -H "Content-Type: application/x-www-form-urlencoded" https://nicola.link/ci-update
+          curl --fail -X POST \
+            --data-urlencode "token=${{ secrets.RELEASE_TOKEN }}" \
+            --data-urlencode "app=powertab" \
+            --data-urlencode "ts=${{ steps.get_timestamp.outputs.ts }}" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            https://nicola.link/ci-update
       - name: Cleanup on Failure
         if: failure()
         env:
