@@ -88,7 +88,7 @@ import '@fortawesome/fontawesome-free/css/solid.css'
         ],
       },
       {
-        section: 'Email',
+        section: 'Chat',
         buttons: [
           {
             class: 'fab fa-whatsapp',
@@ -104,6 +104,11 @@ import '@fortawesome/fontawesome-free/css/solid.css'
             class: 'fab fa-discord',
             link: 'https://discordapp.com',
             title: 'Discord',
+          },
+          {
+            class: 'fab fa-slack',
+            link: 'https://slack.com',
+            title: 'Slack',
           },
         ],
       },
@@ -169,6 +174,11 @@ import '@fortawesome/fontawesome-free/css/solid.css'
             class: 'fab fa-codepen',
             link: 'https://codepen.io',
             title: 'CodePen',
+          },
+          {
+            class: 'fab fa-stack-overflow',
+            link: 'https://stackoverflow.com',
+            title: 'StackOverflow',
           },
         ],
       },
