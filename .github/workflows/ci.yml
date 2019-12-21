@@ -30,13 +30,6 @@ jobs:
         run: |
           zip --recurse-paths ../powertab .
         working-directory: ./dist
-      # - name: Remove release
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   run: |
-      #     git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/nicolalamacchia/powertab.git
-      #     git push --delete origin latest
-      #     sleep 10
       - name: Get timestamp
         id: get_timestamp
         run: |
@@ -62,6 +55,13 @@ jobs:
         run: |
           # curl --head https://nicola.link/ci-update/powertab/${{ steps.get_timestamp.outputs.ts }}
           curl --fail -X POST -d "token=${{ secrets.RELEASE_TOKEN }}&app=powertab&ts=${{ steps.get_timestamp.outputs.ts }}" -H "Content-Type: application/x-www-form-urlencoded" https://nicola.link/ci-update
+      - name: Cleanup on Failure
+        if: failure()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/nicolalamacchia/powertab.git
+          git push --delete origin ${{ steps.get_timestamp.outputs.ts }}
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.1
