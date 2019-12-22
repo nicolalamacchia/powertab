@@ -1,7 +1,4 @@
 import './style.css'
-import '@fortawesome/fontawesome-free/css/fontawesome.css'
-import '@fortawesome/fontawesome-free/css/brands.css'
-import '@fortawesome/fontawesome-free/css/solid.css'
 ;(function() {
   // Default config
   let CONFIG = {
@@ -198,16 +195,35 @@ import '@fortawesome/fontawesome-free/css/solid.css'
         ],
       },
     ]
+
     const qbEl = document.querySelector('#quick-buttons')
+
     QUICK_BUTTONS.forEach(section => {
       const sectionEl = document.createElement('section')
-      // sectionEl.innerHTML = `<header>${section.section}</header>`
+
+      const getSvg = name => {
+        const TYPES = {
+          b: 'brands',
+          r: 'regular',
+          s: 'solid',
+        }
+
+        const type = TYPES[name[2]]
+        const fileName = name.slice(7)
+
+        return require(`!raw-loader!@fortawesome/fontawesome-free/svgs/${type}/${fileName}.svg`)
+          .default
+      }
+
       const buttonsHtml = section.buttons
         .map(
           button =>
-            `<li><a title="${button.title}" href=${button.link}><i class="${button.class}"></i></a></li>`
+            `<li><a title="${button.title}" href=${button.link}><span>${getSvg(
+              button.class
+            )}</span></a></li>`
         )
         .join('')
+
       sectionEl.innerHTML += buttonsHtml
       qbEl.appendChild(sectionEl)
     })
