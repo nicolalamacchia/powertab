@@ -122,6 +122,11 @@ import './style.css'
             link: 'https://drive.google.com',
             title: 'Google Drive',
           },
+          {
+            class: 'far fa-calendar-alt',
+            link: 'https://calendar.google.com',
+            title: 'Google Calendar',
+          },
         ],
       },
       {
