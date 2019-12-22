@@ -51,7 +51,17 @@ jobs:
           release_name: Release ${{ steps.get_timestamp.outputs.ts }}
           draft: false
           prerelease: false
-      - name: Send Release Event
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./powertab.zip
+          asset_name: powertab.zip
+          asset_content_type: application/zip
+      - name: Notify
         run: |
           # curl --head https://nicola.link/ci-update/powertab/${{ steps.get_timestamp.outputs.ts }}
           curl --fail -X POST \
@@ -67,14 +77,3 @@ jobs:
         run: |
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/nicolalamacchia/powertab.git
           git push --delete origin ${{ steps.get_timestamp.outputs.ts }}
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1.0.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./powertab.zip
-          asset_name: powertab.zip
-          asset_content_type: application/zip
-
