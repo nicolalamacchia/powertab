@@ -24,8 +24,7 @@
   "license": "MIT",
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format",
-      "pre-push": "git tag $(date +%s)"
+      "pre-commit": "npm run format"
     }
   }
 }
