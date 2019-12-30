@@ -152,6 +152,11 @@ import './style.css'
             link: 'https://twitch.tv',
             title: 'Twitch',
           },
+          {
+            class: 'fab fa-spotify',
+            link: 'https://open.spotify.com',
+            title: 'Spotify',
+          },
         ],
       },
       {
