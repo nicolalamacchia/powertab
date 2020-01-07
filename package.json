@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot",
+    "start": "webpack-dev-server --open --mode development --hot",
     "format": "prettier --write \"src/**/*.js\"",
     "build": "webpack -p --progress && rm dist/main.js"
   },
