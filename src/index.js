@@ -110,7 +110,7 @@ import './style.css'
         ],
       },
       {
-        section: 'Google',
+        section: 'Productivity',
         buttons: [
           {
             class: 'fas fa-envelope',
@@ -126,6 +126,11 @@ import './style.css'
             class: 'far fa-calendar-alt',
             link: 'https://calendar.google.com',
             title: 'Google Calendar',
+          },
+          {
+            class: 'fab fa-trello',
+            link: 'https://trello.com',
+            title: 'Trello',
           },
         ],
       },
