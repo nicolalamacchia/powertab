@@ -62,6 +62,11 @@ import './style.css'
             link: 'https://deliveroo.it',
             title: 'Deliveroo',
           },
+          {
+            class: 'fas fa-pizza-slice',
+            link: 'https://justeat.it',
+            title: 'JUSTEAT',
+          },
         ],
       },
       {
