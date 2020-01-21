@@ -74,7 +74,7 @@ import './style.css'
           },
           {
             class: 'fab fa-linkedin',
-            link: 'https://linkedin.it',
+            link: 'https://linkedin.com',
             title: 'LinkedIn',
           },
           {
