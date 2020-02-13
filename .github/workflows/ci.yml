@@ -1,6 +1,6 @@
 # vim: set ts=2 sw=2:
 
-name: Upload Release Asset
+name: Build and deploy
 
 on:
   push:
