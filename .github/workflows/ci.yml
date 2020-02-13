@@ -82,5 +82,5 @@ jobs:
           npm install -g firebase-tools
       - name: Deploy on Firebase
         run: |
-          firebase deploy --only hosting --project powertab --token ${{ secrets.FIREBASE_TOKEN }}
+          firebase deploy --only hosting --project power-tab --token ${{ secrets.FIREBASE_TOKEN }}
 
