@@ -14,6 +14,7 @@ import './style.css'
     alwaysNewTab: false,
     gistID: '',
     links: [],
+    separator: ';',
   }
   const DEFAULT_CONFIG = Object.assign({}, CONFIG)
   let aliases = {
@@ -263,7 +264,7 @@ import './style.css'
     lastEnteredCommand = input
 
     // Format input
-    let args = input.split(';')
+    let args = input.split(CONFIG.separator)
     let command = args[0].toLowerCase()
     for (let i = 0; i < args.length; i++) {
       args[i] = args[i].trim()
@@ -672,7 +673,7 @@ import './style.css'
       switch (args.length) {
         case 0:
           displayErrorMessage(
-            `link is a builtin command<br>To search for "link" try g;link<br>`,
+            `link is a builtin command<br>To search for "link" try g${CONFIG.separator}link<br>`,
             8000
           )
           break
