@@ -1,4 +1,4 @@
-# [powertab](https://nicola.dev/powertab)
+# [powertab](https://powertab.nicola.dev/)
 
 ## What
 
