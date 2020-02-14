@@ -9,6 +9,8 @@ import './style.css'
     clockSize: '2em',
     showClock: false,
     militaryClock: false,
+    defaultMsgColor: '#d79921',
+    errorMsgColor: '#cc241d',
     alwaysNewTab: false,
     gistID: '',
     links: [],
@@ -374,8 +376,10 @@ import './style.css'
     localStorage.setItem('taabSettings', JSON.stringify(CONFIG))
   }
 
-  function displayMessage(msg, timeMs) {
+  function displayMessage(msg, timeMs, color = CONFIG.defaultMsgColor) {
     let msgDiv = document.querySelector('#message')
+
+    msgDiv.style.color = color
 
     // Clear existing timer/message
     if (messageTimer) {
@@ -390,6 +394,10 @@ import './style.css'
     messageTimer = setTimeout(() => {
       msgDiv.innerHTML = ''
     }, timeMs)
+  }
+
+  function displayErrorMessage(msg, timeMs) {
+    displayMessage(msg, timeMs, CONFIG.errorMsgColor)
   }
 
   function clearMessage() {
@@ -442,7 +450,7 @@ import './style.css'
       if (xhr.readyState == 4 && xhr.status == 200) {
         let files = JSON.parse(xhr.responseText).files
         if (files.length > 1) {
-          displayMessage(
+          displayErrorMessage(
             'Error: Multiple files found in gist. Please use a gist with only one file.',
             5000
           )
@@ -461,7 +469,7 @@ import './style.css'
     try {
       config = JSON.parse(configString)
     } catch (err) {
-      displayMessage('Error parsing config, see console for details', 5000)
+      displayErrorMessage('Error parsing config, see console for details', 5000)
       console.log(err)
       return
     }
@@ -529,7 +537,7 @@ import './style.css'
             CONFIG['defaultCommand'] = args[1]
             displayMessage(`Set default command to ${args[1]}`, 3000)
           } else {
-            displayMessage(
+            displayErrorMessage(
               `Error: command ${args[1]} not found; default command not changed`,
               10000
             )
@@ -548,7 +556,7 @@ import './style.css'
           if (validHex(args[1])) {
             CONFIG.bgColor = args[1]
           } else {
-            displayMessage('Error: invalid hex value', 5000)
+            displayErrorMessage('Error: invalid hex value', 5000)
           }
           break
 
@@ -567,7 +575,7 @@ import './style.css'
           if (validHex(args[1])) {
             CONFIG['textColor'] = args[1]
           } else {
-            displayMessage('Error: invalid hex value', 5000)
+            displayErrorMessage('Error: invalid hex value', 5000)
           }
           break
 
@@ -604,7 +612,7 @@ import './style.css'
           }
           if (args[1] === 'on') CONFIG.alwaysNewTab = true
           else if (args[1] === 'off') CONFIG.alwaysNewTab = false
-          else displayMessage("Must be set to either 'on' or 'off'", 5000)
+          else displayErrorMessage("Must be set to either 'on' or 'off'", 5000)
           break
 
         // Clock
@@ -634,7 +642,10 @@ import './style.css'
               CONFIG.militaryClock = true
               break
             default:
-              displayMessage("Must be set to 'on', 'off', '12' or '24'", 5000)
+              displayErrorMessage(
+                "Must be set to 'on', 'off', '12' or '24'",
+                5000
+              )
           }
           break
 
@@ -649,7 +660,7 @@ import './style.css'
           break
 
         default:
-          displayMessage(`"${args[0]}" is not a valid setting`, 5000)
+          displayErrorMessage(`"${args[0]}" is not a valid setting`, 5000)
       }
 
       saveConfig()
@@ -660,7 +671,7 @@ import './style.css'
     link: args => {
       switch (args.length) {
         case 0:
-          displayMessage(
+          displayErrorMessage(
             `link is a builtin command<br>To search for "link" try g;link<br>`,
             8000
           )
@@ -726,7 +737,7 @@ import './style.css'
               Object.keys(commands).includes(args[0]) ||
               Object.keys(aliases).includes(args[0])
             ) {
-              displayMessage(
+              displayErrorMessage(
                 `Cannot override builtin command: ${args[0]}`,
                 5000
               )
@@ -742,7 +753,7 @@ import './style.css'
                 search: args[2] || '',
               })
             } else {
-              displayMessage('Invalid URL', 5000)
+              displayErrorMessage('Invalid URL', 5000)
               return
             }
           }
@@ -772,7 +783,7 @@ import './style.css'
             newTab = true
             commands.gist([CONFIG.gistID])
           } else {
-            displayMessage(
+            displayErrorMessage(
               'Error: No gist ID found. Make sure you have fetched your config at least once.',
               8000
             )
@@ -785,7 +796,7 @@ import './style.css'
             try {
               gistID = args[1].match(/([0-9A-Za-z]{32})/)[0]
             } catch (err) {
-              displayMessage(
+              displayErrorMessage(
                 'Error: unable to parse gist ID.<br>Try entering just the 32 character ID string.',
                 8000
               )
@@ -794,7 +805,7 @@ import './style.css'
           } else if (CONFIG.gistID != undefined) {
             gistID = CONFIG.gistID
           } else {
-            displayMessage('Error: no gist ID', 5000)
+            displayErrorMessage('Error: no gist ID', 5000)
             break
           }
           displayMessage('Fetching gist...', 2500)

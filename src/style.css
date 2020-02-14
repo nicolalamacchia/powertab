@@ -22,18 +22,21 @@ body,
   display: none;
 }
 #input {
-  text-align: center;
-  font-size: inherit;
-  color: inherit;
   background: transparent;
   border: none;
+  color: inherit;
+  font-size: inherit;
+  margin-bottom: 42px;
   outline: none;
+  text-align: center;
   width: 100%;
 }
 #message {
   font-size: 0.5em;
-  margin-top: 42px;
+  line-height: 1.5;
+  position: absolute;
   text-align: center;
+  top: 30px;
 }
 #clock,
 #input,
