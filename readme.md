@@ -2,7 +2,7 @@
 
 ## What
 
-A minimal, customizable command line [startpage](https://nicola.dev/powertab).
+A minimal, customizable command line [startpage](https://powertab.nicola.dev/).
 
 ## Why
 
