@@ -2,13 +2,14 @@
   "scripts": {
     "start": "webpack-dev-server --open --mode development --hot",
     "format": "prettier --write \"src/**/*.js\"",
-    "build": "webpack -p --progress && rm dist/main.js"
+    "build": "rm -rf dist && webpack -p --progress && rm dist/main.js"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.12.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
+    "copy-webpack-plugin": "^5.1.1",
     "critters-webpack-plugin": "^2.4.0",
     "css-loader": "^3.2.0",
     "file-loader": "^5.0.2",
