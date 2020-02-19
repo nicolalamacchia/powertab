@@ -14,7 +14,7 @@ const resourcesToPrecache = [
 
 const cacheResources = async () => {
   const cache = await caches.open(CACHE_NAME)
-  return cache.addAll(resourceToPrecache)
+  return cache.addAll(resourcesToPrecache)
 }
 
 self.addEventListener('install', async event => {
