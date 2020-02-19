@@ -13,7 +13,7 @@ const resourcesToPrecache = [
 ]
 
 const cacheResources = async () => {
-  const cache = await caches.open(cacheName)
+  const cache = await caches.open(CACHE_NAME)
   return cache.addAll(resourceToPrecache)
 }
 
