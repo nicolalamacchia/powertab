@@ -1092,4 +1092,12 @@ import './style.css'
       else redirect(buildURL(url, search, args.join(' ')))
     },
   }
-})() // closure
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(err => {
+        console.error(err)
+      })
+    })
+  }
+})()
