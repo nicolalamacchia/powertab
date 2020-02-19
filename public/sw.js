@@ -12,7 +12,7 @@ const resourcesToPrecache = [
   '/manifest.json',
 ]
 
-const cachedResources = async () => {
+const cacheResources = async () => {
   const cache = await caches.open(cacheName)
   return cache.addAll(resourceToPrecache)
 }
