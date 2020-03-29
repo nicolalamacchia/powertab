@@ -1,5 +1,5 @@
 import './style.css'
-;(function() {
+;(function () {
   // Default config
   let CONFIG = {
     defaultCommand: 'g',
@@ -447,7 +447,7 @@ import './style.css'
   function fetchGist(gistID) {
     let xhr = new XMLHttpRequest()
     let url = `https://api.github.com/gists/${gistID}`
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
         let files = JSON.parse(xhr.responseText).files
         if (files.length > 1) {
