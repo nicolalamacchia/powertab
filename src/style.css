@@ -4,7 +4,11 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  font-size: 1.75em;
+  box-sizing: border-box;
+  font-size: 28px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 body,
 #app {
