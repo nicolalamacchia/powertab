@@ -90,6 +90,11 @@ import './style.css'
             link: 'https://twitter.com',
             title: 'Twitter',
           },
+          {
+            class: 'fab fa-flickr',
+            link: 'https://flickr.com',
+            title: 'Flickr',
+          },
         ],
       },
       {
