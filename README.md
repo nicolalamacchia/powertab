@@ -18,3 +18,7 @@ See [basic usage and examples][usage] or the [complete documentation][commands] 
 ## Credits
 
 Forked from [tab](https://github.com/KorySchneider/tab) by [koryschneider](https://koryschneider.com/tab).
+
+## TODO
+
+* Deep refactoring
