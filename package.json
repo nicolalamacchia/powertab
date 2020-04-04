@@ -1,6 +1,8 @@
 {
   "scripts": {
     "start": "webpack-dev-server --open --mode development --hot",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint --fix src/**/*.js",
     "format": "prettier --write \"src/**/*.{js,css,html}\"",
     "build": "rm -rf dist && webpack -p --progress && rm dist/main.js"
   },
@@ -12,6 +14,9 @@
     "copy-webpack-plugin": "^5.1.1",
     "critters-webpack-plugin": "^2.5.0",
     "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "file-loader": "^6.0.0",
     "html-webpack-inline-source-plugin": "^0.0.10",
     "html-webpack-plugin": "^3.2.0",
@@ -26,7 +31,9 @@
   },
   "license": "MIT",
   "lint-staged": {
-    "src/**/*.{js,css,html}": ["prettier --write"]
+    "src/**/*.js": "eslint --fix",
+    "src/**/*.{js,css,html}": "prettier --write",
+    "src/**/*.svg": "imgmin-lint-staged"
   },
   "husky": {
     "hooks": {

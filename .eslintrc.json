@@ -1,0 +1,57 @@
+{
+  "extends": [
+    "plugin:prettier/recommended",
+    "eslint:recommended"
+  ],
+  "plugins": ["prettier"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
+  },
+  "rules": {
+    "prettier/prettier": "warn",
+    "eqeqeq": "error",
+    "prefer-const": "error",
+    "curly": "error",
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-constructor-return": "error",
+    "no-dupe-else-if": "warn",
+    "default-param-last": "warn",
+    "consistent-return": "warn",
+    "class-methods-use-this": "warn",
+    "no-eval": "error",
+    "no-implicit-coercion": "error",
+    "no-implicit-globals": "warn",
+    "no-lone-blocks": "error",
+    "camelcase": "warn",
+    "no-useless-return": "error",
+    "sort-keys": "warn",
+    "sort-imports": ["warn", { "ignoreDeclarationSort": true }],
+    "no-var": "error",
+    "object-shorthand": "error",
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-arrow-callback": "error",
+    "no-mixed-operators": "error",
+    "no-plusplus": "error",
+    "require-await": "error",
+    "func-style": ["error", "expression"],
+    "no-else-return": "warn"
+  }
+}
