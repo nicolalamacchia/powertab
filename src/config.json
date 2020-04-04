@@ -1,0 +1,199 @@
+{
+  "default": {
+    "defaultCommand": "g",
+    "bgColor": "#282828",
+    "textColor": "#ebdbb2",
+    "fontSize": "1.75em",
+    "clockSize": "2em",
+    "showClock": false,
+    "militaryClock": false,
+    "defaultMsgColor": "#d79921",
+    "errorMsgColor": "#cc241d",
+    "alwaysNewTab": false,
+    "gistID": "",
+    "links": [],
+    "separator": ";"
+  },
+  "aliases": {
+    "cal": "gc",
+    "gk": "k",
+    "ddg": "dg",
+    "?": "help"
+  },
+  "quickButtons": [
+    {
+      "section": "Shopping",
+      "buttons": [
+        {
+          "class": "fab fa-ebay",
+          "link": "https://ebay.it",
+          "title": "eBay" },
+        {
+          "class": "fab fa-amazon",
+          "link": "https://amazon.it",
+          "title": "Amazon"
+        },
+        {
+          "class": "fas fa-hamburger",
+          "link": "https://deliveroo.it",
+          "title": "Deliveroo"
+        },
+        {
+          "class": "fas fa-pizza-slice",
+          "link": "https://justeat.it",
+          "title": "JUSTEAT"
+        }
+      ]
+    },
+    {
+      "section": "Social",
+      "buttons": [
+        {
+          "class": "fab fa-reddit",
+          "link": "https://reddit.com",
+          "title": "Reddit"
+        },
+        {
+          "class": "fab fa-linkedin",
+          "link": "https://linkedin.com",
+          "title": "LinkedIn"
+        },
+        {
+          "class": "fab fa-twitter",
+          "link": "https://twitter.com",
+          "title": "Twitter"
+        },
+        {
+          "class": "fab fa-flickr",
+          "link": "https://flickr.com",
+          "title": "Flickr"
+        }
+      ]
+    },
+    {
+      "section": "Chat",
+      "buttons": [
+        {
+          "class": "fab fa-whatsapp",
+          "link": "https://web.whatsapp.com",
+          "title": "WhatsApp"
+        },
+        {
+          "class": "fab fa-telegram",
+          "link": "https://web.telegram.org",
+          "title": "Telegram"
+        },
+        {
+          "class": "fab fa-discord",
+          "link": "https://discordapp.com",
+          "title": "Discord"
+        },
+        {
+          "class": "fab fa-slack",
+          "link": "https://slack.com",
+          "title": "Slack"
+        }
+      ]
+    },
+    {
+      "section": "Productivity",
+      "buttons": [
+        {
+          "class": "fas fa-envelope",
+          "link": "https://gmail.com",
+          "title": "Gmail"
+        },
+        {
+          "class": "fab fa-google-drive",
+          "link": "https://drive.google.com",
+          "title": "Google Drive"
+        },
+        {
+          "class": "far fa-calendar-alt",
+          "link": "https://calendar.google.com",
+          "title": "Google Calendar"
+        },
+        {
+          "class": "fab fa-trello",
+          "link": "https://trello.com",
+          "title": "Trello"
+        }
+      ]
+    },
+    {
+      "section": "Streaming",
+      "buttons": [
+        {
+          "class": "fas fa-film",
+          "link": "https://netflix.com",
+          "title": "Netflix"
+        },
+        {
+          "class": "fas fa-play-circle",
+          "link": "https://primevideo.com",
+          "title": "Prime Video"
+        },
+        {
+          "class": "fab fa-youtube",
+          "link": "https://youtube.com",
+          "title": "YouTube"
+        },
+        {
+          "class": "fab fa-twitch",
+          "link": "https://twitch.tv",
+          "title": "Twitch"
+        },
+        {
+          "class": "fab fa-spotify",
+          "link": "https://open.spotify.com",
+          "title": "Spotify"
+        }
+      ]
+    },
+    {
+      "section": "Code",
+      "buttons": [
+        {
+          "class": "fab fa-github",
+          "link": "https://github.com",
+          "title": "GitHub"
+        },
+        {
+          "class": "fab fa-gitlab",
+          "link": "https://gitlab.com",
+          "title": "GitLab"
+        },
+        {
+          "class": "fas fa-laptop-code",
+          "link": "https://codesandbox.io",
+          "title": "CodeSandbox"
+        },
+        {
+          "class": "fab fa-codepen",
+          "link": "https://codepen.io",
+          "title": "CodePen"
+        },
+        {
+          "class": "fab fa-stack-overflow",
+          "link": "https://stackoverflow.com",
+          "title": "StackOverflow"
+        }
+      ]
+    },
+    {
+      "section": "Games",
+      "buttons": [
+        {
+          "class": "fab fa-steam",
+          "link": "https://steampowered.com",
+          "title": "Steam"
+        },
+        {
+          "class": "fas fa-gamepad",
+          "link": "https://gog.com",
+          "title": "GOG"
+        }
+      ]
+    }
+  ]
+}
