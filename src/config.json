@@ -67,6 +67,11 @@
           "class": "fab fa-flickr",
           "link": "https://flickr.com",
           "title": "Flickr"
+        },
+        {
+          "class": "fas fa-photo-video",
+          "link": "https://photos.google.com/",
+          "title": "Google Photos"
         }
       ]
     },
@@ -117,6 +122,11 @@
           "class": "fab fa-trello",
           "link": "https://trello.com",
           "title": "Trello"
+        },
+        {
+          "class": "fas fa-map-marked-alt",
+          "link": "https://maps.google.com",
+          "title": "Google Maps"
         }
       ]
     },
